@@ -14,47 +14,6 @@
 // (2) 1 ≤ arrayA의 원소, arrayB의 원소 ≤ 100,000,000
 // (3) arrayA와 arrayB에는 중복된 원소가 있을 수 있습니다.
 
-//두 수의 최대공약수(GCD; Greatest Common Divisor)를 구하는 함수
-function getGCD(num1, num2) {
-  let gcd = 1;
-  let large_num;
-  let small_num;
-  if (num1 > num2) {
-    large_num = num1;
-    small_num = num2;
-  } else {
-    large_num = num2;
-    small_num = num1;
-  }
-  for (let n = 1; n <= small_num; n++) {
-    if (large_num % n === 0 && small_num % n === 0) {
-      gcd = n;
-    }
-  }
-  return gcd;
-}
-
-function getGCDfromArray(array) {
-  array.sort();
-  min = array[0];
-  let gcd = 1;
-  for (let n = 1; n <= min; n++) {
-    let isDivided = 1;
-    for (let i = 0; i < array.length; i++) {
-      if (array[i] % n === 0) {
-        isDivided *= 1;
-      } else {
-        isDivided *= 0;
-        break;
-      }
-    }
-    if (isDivided === 1) {
-      gcd = n;
-    }
-  }
-  return gcd;
-}
-
 function solution(arrayA, arrayB) {
   let a = 0;
   let b = 0;
