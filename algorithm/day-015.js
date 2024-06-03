@@ -3,14 +3,8 @@
 // 답이 항상 존재함은 증명될 수 있습니다.
 // 제한사항: 3 ≤ n ≤ 1,000,000
 
-function minDivisorMod1(natural_num) {
-  if (natural_num >= 3) {
-    let x;
-    for (x = 1; x < natural_num; x++) {
-      if (natural_num % x === 1) break;
-    }
-    return x;
-  } else {
-    console.log("3 이상의 자연수를 입력하세요.");
+function solution(n) {
+  for (let x = 2; x < n; x++) {
+    if (n % x === 1) return x;
   }
 }

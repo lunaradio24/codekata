@@ -3,16 +3,10 @@
 
 // 제한 사항: n은 1이상, 50000000000000 이하인 양의 정수입니다.
 
-function solution(natural_num) {
-  let result = -1;
-
-  for (let n = 1; n < natural_num; n++) {
-    if (n ** 2 === natural_num) {
-      result = (n + 1) ** 2;
-      break;
-    }
-  }
-  return result;
+function solution(n) {
+  const sqrt = Math.sqrt(n);
+  const isSquared = Math.floor(sqrt) === sqrt;
+  return isSquared ? (sqrt + 1) ** 2 : -1;
 }
 
 console.log(solution(3));

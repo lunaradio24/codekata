@@ -5,12 +5,7 @@
 // x는 -10000000 이상, 10000000 이하인 정수입니다.
 // n은 1000 이하인 자연수입니다.
 
-function solution(integer, natural_num) {
-  let arr = [];
-  let x = integer;
-  let n = natural_num;
-  for (let i = 1; i < n + 1; i++) {
-    arr.push(x * i);
-  }
-  return arr;
+function solution(x, n) {
+  const ones = Array(n).fill(1);
+  return ones.map((_, i) => x * (i + 1));
 }

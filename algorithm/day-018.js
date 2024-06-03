@@ -11,21 +11,9 @@
 // 예를들어 str이 "1234"이면 1234를 반환하고, "-1234"이면 -1234를 반환하면 됩니다.
 // str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.
 
-function toNumber(string) {
-  let num = 0;
-  let sign = 1;
-
-  for (let i = 0; i < string.length; i++) {
-    if (string[i] === "+") {
-    } else if (string[i] === "-") {
-      sign = -1;
-    } else {
-      for (let n = 0; n < 10; n++) {
-        if (string[i] == n) {
-          num = num * 10 + n;
-        }
-      }
-    }
-  }
+function solution(s) {
+  const sign = s[0] === "-" ? -1 : 1;
+  const startAt = s[0] === "+" || s[0] === "-" ? 1 : 0;
+  const num = Number(s.slice(startAt));
   return num * sign;
 }
